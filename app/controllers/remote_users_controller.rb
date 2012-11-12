@@ -1,0 +1,2 @@
+class RemoteUsersController < ApplicationController
+end
