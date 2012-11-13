@@ -9,6 +9,7 @@ require 'api'
     end
 
     def test_out_json
+        logger.info "StaticPagesController test_out with type JSON called."
         @test_output = get_remote_data_json
     end
 
