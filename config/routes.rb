@@ -12,7 +12,7 @@ ServicesTest::Application.routes.draw do
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
-    resources :remote_users, :only => [:index]
+    #resources :subscriptions, :only => [:index]
 
   # Sample resource route with options:
   #   resources :products do
@@ -51,6 +51,9 @@ ServicesTest::Application.routes.draw do
   # just remember to delete public/index.html.
   # root :to => 'welcome#index'
     root to: 'session#new'
+
+    match '/test_out_json', to: 'static_pages#test_out_json'
+    match '/test_out_xml', to: 'static_pages#test_out_xml'
 
 
     # See how all your routes lay out with "rake routes"

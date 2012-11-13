@@ -1,10 +1,17 @@
 <div style="padding:20px;">
 <h2>try a button to call a service ...</h2>
   <ul style="list-style-type:none;" >
+    <!--
+    <li><form action="index" method="GET">
+            <input type="submit"  value="HTML input" class="btn btn-primary"/>
+        </form>
+    </li><li>-->
     <li>
-        <input type="submit"  value="Get Remote Users" class="btn btn-primary"/>
-    </li><li>
-        <%= link_to "link to something else ...", class: "btn btn-primary" %>
+      <!-- sends the parm {"format"=>"json"} -->
+      <%= button_to "button_to remote data (JSON)", test_out_json_path, { method: :get, class: "btn btn-warning" } %>
+    </li>
+    <li>
+        <%= link_to "link_to remote data (XML)", test_out_xml_path, { method: :get, class: "btn btn-danger" } %>
     </li>
   </ul>
 </div>
