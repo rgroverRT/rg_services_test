@@ -13,6 +13,12 @@ require 'api'
         @test_output = get_remote_data_json
     end
 
+    def test_out_custom
+        logger.info "StaticPagesController test_out without using ActiveResource."
+        @test_output = get_remote_data_custom
+        render :test_out_xml
+    end
+
     private
         def get_remote_data_xml     #(output_format)
             #subscription = { key1:  "value1", key2:  "value2", key3:  "value3", }
@@ -24,6 +30,11 @@ require 'api'
         def get_remote_data_json
             Api::Subscription.format = :json
             subscription = Api::Subscription.get(:oldest)
+            return subscription
+        end
+
+        def get_remote_data_custom
+            subscription = { "product" => "hard-coded", "id" => "424242" }
             return subscription
         end
 

@@ -5,10 +5,5 @@ module Api
         schema do
             attribute 'product', 'string'
         end
-
-
-
-
     end
-
 end

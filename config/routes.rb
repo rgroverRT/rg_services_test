@@ -54,6 +54,7 @@ ServicesTest::Application.routes.draw do
 
     match '/test_out_json', to: 'static_pages#test_out_json'
     match '/test_out_xml', to: 'static_pages#test_out_xml'
+    match '/test_out_custom', to: 'static_pages#test_out_custom'
 
 
     # See how all your routes lay out with "rake routes"
