@@ -34,7 +34,15 @@ require 'api'
         end
 
         def get_remote_data_custom
-            subscription = { "product" => "hard-coded", "id" => "424242" }
+            #subscription = { "product" => "hard-coded", "id" => "424242" }
+
+            url = URI.parse('http://localhost:3000/subscriptions/oldest.json')
+            req = Net::HTTP::Get.new(url.path)
+            res = Net::HTTP.start(url.host, url.port) {|http|
+                http.request(req)
+            }
+            #subscription = JSON(res.body)["product"]
+            subscription = JSON.parse res.body
             return subscription
         end
 
